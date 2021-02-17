@@ -13,7 +13,7 @@ public class EmprestimoModel {
 
     public ModalidadeModel garantia(){
         ModalidadeModel modalidade = new ModalidadeModel();
-        modalidade.setTipo("Garantia");
+        modalidade.setTipo("Com Garantia");
         modalidade.setTaxa(3);
 
         return modalidade;

@@ -8,7 +8,9 @@ import br.com.codarts.model.ResponseCliente;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
@@ -16,7 +18,7 @@ import java.net.URI;
 import java.util.List;
 
 @SpringBootApplication
-@RestController
+@Controller
 public class ProvaDevPlenoApplication {
 
     private NegociacaoModel negociacaoModel;
@@ -25,17 +27,9 @@ public class ProvaDevPlenoApplication {
 
     }
 
-
-    @GetMapping("/cliente")
-    public Cliente home(){
-        Cliente c = new Cliente();
-
-        c.setNome("Rafael");
-        c.setCpf("123.456.789-10");
-        c.setIdade(25);
-        c.setUf("Caucaia");
-        c.setSalario(4500);
-        return c;
+    @RequestMapping("/")
+    public String home() {
+        return "index";
     }
 
 
